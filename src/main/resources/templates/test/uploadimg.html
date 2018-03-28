@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>uploadimg.html</title>
+   <!DOCTYPE html>
+    <html>
+    <head>
+        <title>uploadimg.html</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="keyword1,keyword2,keyword3"></meta>
+        <meta name="description" content="this is my page"></meta>
+        <meta name="content-type" content="text/html; charset=UTF-8"></meta>
 
-    <meta name="keywords" content="keyword1,keyword2,keyword3"></meta>
-    <meta name="description" content="this is my page"></meta>
-    <meta name="content-type" content="text/html; charset=UTF-8"></meta>
+        <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 
-    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-
-</head>
+    </head>
 
 <body>
-<form enctype="multipart/form-data" method="post" action="/audio/testuploadimg">
+<form enctype="multipart/form-data" method="post" action="/audio/uploadimg">
     图片<input type="file" name="file"/>
+    <input type="text" name="bookName"/>
     <input type="submit" value="上传"/>
 </form>
 </body>
