@@ -38,12 +38,13 @@ public class FileServiceImpl implements FileService {
 
 
     @Override
-    public void Upload(MultipartFile file, String bookName) {
+    public String Upload(MultipartFile file, String bookName) {
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
         OSSClient ossClient = new OSSClient(endpoint, new DefaultCredentialProvider(accessKeyId, accessKeySecret), null);
         // 创建上传Object的Metadata
         ObjectMetadata meta = new ObjectMetadata();
+        URL url = null;
         // meta.setContentLength(file.length());
         try {
             String md5 = BinaryUtil.toBase64String(BinaryUtil.calculateMd5(file.getBytes()));
@@ -51,29 +52,32 @@ public class FileServiceImpl implements FileService {
             meta.setContentType(contentType);
             ossClient.putObject("audiolist", fileName, new ByteArrayInputStream(file.getBytes()), meta);
             Date expiration = new Date(new Date().getTime() + 3600 * 1000);// 生成URL
-            URL url = ossClient.generatePresignedUrl("audiolist", fileName, expiration);
-            FileInfo info = fileInfoRepository.findByBookName(bookName);
-            if (info == null) {
-                FileInfo fileInfo = new FileInfo();
-                String id = UUID.randomUUID().toString().replace("-", "").toUpperCase();
-                fileInfo.setBookId(id);
-                fileInfo.setBookName(bookName);
-                fileInfo.setFileName(fileName);
-                fileInfo.setFileUrl(url.toString());
-                fileInfo.setCreateAt(new Date());
-                fileInfoRepository.save(fileInfo);
-            } else {
-                FileInfo fileInfo = new FileInfo();
-                fileInfo.setBookId(info.getBookId());
-                fileInfo.setBookName(info.getBookName());
-                fileInfo.setFileName(fileName);
-                fileInfo.setFileUrl(url.toString());
-                fileInfo.setCreateAt(new Date());
-            }
+            url = ossClient.generatePresignedUrl("audiolist", fileName, expiration);
         } catch (IOException e) {
             throw new AudioException(ResultEnum.RC_0401001);
         } finally {
             ossClient.shutdown();
+        }
+        FileInfo info = fileInfoRepository.findByBookName(bookName);
+        if (info == null) {
+            FileInfo fileInfo = new FileInfo();
+            String id = UUID.randomUUID().toString().replace("-", "").toUpperCase();
+            fileInfo.setBookId(id);
+            fileInfo.setBookName(bookName);
+            fileInfo.setFileName(fileName);
+            fileInfo.setFileUrl(url.toString());
+            fileInfo.setCreateAt(new Date());
+            fileInfoRepository.save(fileInfo);
+            return fileInfo.getBookId();
+        } else {
+            FileInfo fileInfo = new FileInfo();
+            fileInfo.setBookId(info.getBookId());
+            fileInfo.setBookName(info.getBookName());
+            fileInfo.setFileName(fileName);
+            fileInfo.setFileUrl(url.toString());
+            fileInfo.setCreateAt(new Date());
+            fileInfoRepository.save(fileInfo);
+            return fileInfo.getBookId();
         }
     }
 

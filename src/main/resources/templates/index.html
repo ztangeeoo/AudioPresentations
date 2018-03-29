@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-<audio src="" id="myMusic" controls="controls"></audio>
+<video src="" id="myMusic" controls="controls"></video>
 <div class="video_list">
     <ul>
         <li th:each="prod : ${list}" class="list" th:attr="data-url=${prod.fileUrl}" th:text="${prod.fileName}">
@@ -57,7 +57,7 @@
     </ul>
 </div>
 <script>
-    ;(function (doc) {
+    (function (doc) {
 
         var video = doc.querySelector("#myMusic"),
             vList = doc.querySelectorAll(".list");

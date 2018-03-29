@@ -13,7 +13,7 @@ public interface FileService {
     /**
      * 文件上传
      */
-    void Upload(MultipartFile file, String bookName);
+    String Upload(MultipartFile file, String bookName);
 
     ArrayList<FileInfo> getAudioList(String bookId);
 
