@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/gradle/gradle-4.1-bin/gradle-4.1/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.3/9d70af7c5982bd09c33efa97ac98cee6363ba0f0/commons-beanutils-1.9.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.3/9d70af7c5982bd09c33efa97ac98cee6363ba0f0/commons-beanutils-1.9.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

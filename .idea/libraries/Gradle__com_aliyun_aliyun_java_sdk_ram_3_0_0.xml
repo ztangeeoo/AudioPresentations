@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/gradle/gradle-4.1-bin/gradle-4.1/caches/modules-2/files-2.1/com.aliyun/aliyun-java-sdk-ram/3.0.0/d5391c7f103f6fd85f754fb519d32b46a2d47694/aliyun-java-sdk-ram-3.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.aliyun/aliyun-java-sdk-ram/3.0.0/d5391c7f103f6fd85f754fb519d32b46a2d47694/aliyun-java-sdk-ram-3.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

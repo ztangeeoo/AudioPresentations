@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/gradle/gradle-4.1-bin/gradle-4.1/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-xc/1.8.3/cf3b2508f4ca5beccbd6f28e027ba89e4b09097/jackson-xc-1.8.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-xc/1.8.3/cf3b2508f4ca5beccbd6f28e027ba89e4b09097/jackson-xc-1.8.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -16,25 +16,7 @@ buildscript {
 assert JavaVersion.current().java8Compatible:
         "At least Java $javaVersion is required, current JVM is ${JavaVersion.current()}"
 
-ext {
-    def envArg = 'projectEnv'
-    def projectEnvList = ['local','developing', 'staging', 'product','proxia','pro']
-    def hasEnvProp = projectEnvList.contains(project.properties.get(envArg))
-    if (!hasEnvProp) {
-        println """
-    ==> missing: `$envArg` with `-P$envArg` option one of ${projectEnvList.toListString()}
-    ==> example: `-P$envArg=developing`"""
 
-        projectEnv = 'local'
-
-        println """    ==> use default project env: ${project[envArg]}
-        """
-    } else {
-        println """
-    ==> use project env: ${project.properties.get(envArg)}
-        """
-    }
-}
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -73,4 +55,9 @@ dependencies {
     compile(fileTree(dir: 'libs', include: ['*.jar']))
     compile("net.sf.json-lib:json-lib:2.4:jdk15")
     runtime('org.springframework.boot:spring-boot-devtools')
+    compile group: 'xpp3', name: 'xpp3_min', version: '1.1.4c'
+    compile group: 'xmlpull', name: 'xmlpull', version: '1.1.3.1'
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.7'
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
 }

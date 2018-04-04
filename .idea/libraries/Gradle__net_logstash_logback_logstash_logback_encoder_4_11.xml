@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/gradle/gradle-4.1-bin/gradle-4.1/caches/modules-2/files-2.1/net.logstash.logback/logstash-logback-encoder/4.11/8b889d5eb55aabfa5d9aa9cad95529668f3edb2b/logstash-logback-encoder-4.11-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.logstash.logback/logstash-logback-encoder/4.11/8b889d5eb55aabfa5d9aa9cad95529668f3edb2b/logstash-logback-encoder-4.11-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

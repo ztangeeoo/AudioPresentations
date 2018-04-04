@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/gradle/gradle-4.1-bin/gradle-4.1/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.8.3/895a285bc49d872bacdddc32ce515cf0e969385a/jackson-mapper-asl-1.8.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.8.3/895a285bc49d872bacdddc32ce515cf0e969385a/jackson-mapper-asl-1.8.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

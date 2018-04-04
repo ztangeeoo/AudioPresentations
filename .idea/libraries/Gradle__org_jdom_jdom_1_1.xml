@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://F:/gradle/gradle-4.1-bin/gradle-4.1/caches/modules-2/files-2.1/org.jdom/jdom/1.1/a7ed425c4c46605b8f2bf2ee118c1609682f4f2c/jdom-1.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdom/jdom/1.1/a7ed425c4c46605b8f2bf2ee118c1609682f4f2c/jdom-1.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
